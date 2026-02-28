@@ -1,0 +1,78 @@
+@font-face {
+  font-family: "MyFont";
+  src: url("/public/fonts/ALS_Sirius_Regular_0.95.otf");
+}
+
+body {
+  font-family: "MyFont", sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  overflow: hidden;
+}
+
+.settingsBlock {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: calc(100% - 450px);
+  padding: 30px;
+  background-color: #313030;
+  height: 320px;
+  width: 320px;
+  border: 2px solid white;
+  border-radius: 20px;
+  left: 20px;
+  justify-content: space-between;
+}
+
+.loginBtn {
+  background-color: #00D458;
+  color: white;
+  border-radius: 10px;
+  height: 30px;
+  font-family: "MyFont";
+  width: 185px;
+  height: 35px;
+  border: none
+}
+
+.loginBtn:hover {
+  background-color: #03e762;
+}
+
+
+.registerBtn {
+  background-color: #0271FF;
+  color: white;
+  border-radius: 10px;
+  height: 30px;
+  font-family: "MyFont";
+  width: 185px;
+  height: 35px;
+  border: none
+}
+
+.registerBtn:hover {
+  background-color: #1b7eff;
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalWindow {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  border-radius: 12px;
+  min-width: 350px;
+}
