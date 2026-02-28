@@ -16,15 +16,16 @@
 }
 
 table {
-   border: 2px solid rgb(140 140 140);
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -khtml-border-radius: 10px;
-   border-spacing: 0;
-   border-radius: 10px;
+    border: 2px solid rgb(140 140 140);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    border-spacing: 0;
+    border-radius: 10px;
 }
 
-th,td {
+th,
+td {
     padding: 5px 30px;
     text-align: center;
     border-right: 2px solid rgb(140 140 140);
@@ -44,10 +45,10 @@ th,td {
 }
 
 .profilebtn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     height: 50px;
     width: 50px;
     background: none;
@@ -58,9 +59,9 @@ th,td {
 
 
 .settingsBtn {
-      display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: none;
     border: 2px solid white;
     border-radius: 100px;

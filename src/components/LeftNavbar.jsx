@@ -14,6 +14,8 @@ import raiting from "../resources/img/raiting.svg"
 import sun from "../resources/img/sun.svg"
 import support from "../resources/img/support.svg"
 import logout from "../resources/img/logout.svg"
+import closeForm from "../resources/img/closeForm.svg"
+import closebtn from "../resources/img/closebtn.svg"
 
 ReactModal.setAppElement("#root")
 
@@ -21,6 +23,7 @@ function LeftNavBar() {
 
     const [isOpen, setIsOpen] = useState(false)
     const [visible, setVisible] = useState(false)
+    const [files, setFiles] = useState([])
 
     const toggleMenu = () => {
         setIsOpen(prev => !prev)
@@ -58,7 +61,7 @@ function LeftNavBar() {
                 />
                 <button className="btntable"
                     data-tooltip-id="addfile-tip"
-                    data-tooltip-content="Добавить работу" onClick={() => setVisible(!visible)}>
+                    data-tooltip-content="Добавление работ" onClick={() => setVisible(!visible)}>
                     <img src={plus} alt="plus" style={{ height: "20px" }} />
                 </button>
                 <ReactModal
@@ -67,15 +70,73 @@ function LeftNavBar() {
                     className="modalWindow"
                     overlayClassName="modalOverlay"
                 >
-                    <h2>Загрузка работы</h2>
+                    <div style={{ display: "flex", justifyContent: "space-between" }}>
+                        <h2>Добавление работ</h2>
 
-                    <input type="file" />
-
-                    <div style={{ marginTop: "20px" }}>
-                        <button onClick={() => setVisible(false)}>
-                            Закрыть
-                        </button>
+                        <div style={{ marginTop: "20px" }}>
+                            <button className="btntable" onClick={() => setVisible(false)}> <img src={closeForm} alt="closeBtn" style={{ height: "14px", alignSelf: "center" }} /></button>
+                        </div>
                     </div>
+
+                    <div style={{
+                        marginTop: "20px",
+                        display: "flex",
+                        gap: "15px",
+                        flexWrap: "wrap"
+                    }}>
+                        {files.map((item, index) => (
+                            <div key={index} style={{
+                                position: "relative"
+                            }}>
+                                <img
+                                    src={item.preview}
+                                    alt="preview"
+                                    style={{
+                                        width: "100px",
+                                        height: "100px",
+                                        objectFit: "cover",
+                                        borderRadius: "8px",
+                                        border: "2px solid #ffffffff",
+                                    }}
+                                />
+
+                                <button
+                                    onClick={() => {
+                                        setFiles(files.filter((_, i) => i !== index))
+                                    }}
+                                    className="btntable"> <img src={closeForm} alt="closebtn" style={{ height: "14px", alignSelf: "center", position: "absolute", top: "5px", left: "calc(100% - 30px)", }} /></button>
+                            </div>
+                        ))}
+                        <div style={{ position: "relative" }}>
+                            <label htmlFor="fileUpload" className="btntable" >
+                                <div style={{ display: "flex", alignItems: "center", border: "2px dashed white", width: "100px", height: "100px", justifyContent: "center", borderRadius: "8px" }}>
+                                    <img src={plus} alt="add" style={{
+                                        width: "50px",
+                                        height: "50px",
+                                    }} />
+                                </div>
+
+                            </label>
+
+                            <input
+                                id="fileUpload"
+                                type="file"
+                                multiple
+                                style={{ display: "none" }}
+                                onChange={(e) => {
+                                    const selectedFiles = Array.from(e.target.files)
+
+                                    const mappedFiles = selectedFiles.map(file => ({
+                                        file,
+                                        preview: URL.createObjectURL(file)
+                                    }))
+
+                                    setFiles(prev => [...prev, ...mappedFiles])
+                                }}
+                            />
+                        </div>
+                    </div>
+
                 </ReactModal>
                 <Tooltip id="addfile-tip"
                     place="right"
@@ -104,6 +165,7 @@ function LeftNavBar() {
                     borderRadius: "8px"
                 }}
             />
+
             {isOpen && (
                 <div className="settingsBlock">
                     <div>
