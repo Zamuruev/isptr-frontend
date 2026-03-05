@@ -231,7 +231,7 @@ function LeftNavBar() {
                                 <button className="settingsBtn" style={{ border: "none", flexDirection: "row", marginTop: "30px" }}> <img alt="settings" src={raiting} style={{ height: "25px", marginRight: "15px" }} /> <div style={{ color: "white" }}>Рейтинг</div></button>
                             </div>
                             <div>
-                                <button className="settingsBtn" style={{ border: "none", flexDirection: "row", marginTop: "30px" }}> <img alt="settingsBtn" src={sun} style={{ height: "25px", marginRight: "15px" }} /><div style={{ color: "white" }}>Тема: <a style={{ color: "#0271FF" }}>Темная</a></div></button>
+                                <button className="settingsBtn" style={{ border: "none", flexDirection: "row", marginTop: "30px" }}> <img alt="settingsBtn" src={sun} style={{ height: "25px", marginRight: "15px" }} /><div style={{ color: "white" }}>Тема: <p style={{ color: "#0271FF" }}>Темная</p></div></button>
                             </div>
                         </div>
                     </div>
@@ -240,7 +240,7 @@ function LeftNavBar() {
                             <button className="settingsBtn" style={{ border: "none", flexDirection: "row", marginTop: "30px" }}> <img alt="settingsBtn" src={support} style={{ height: "25px", marginRight: "15px" }} /><div style={{ color: "#00D458", fontWeight: "bold", fontSize: "17px" }}>Поддержка</div></button>
                         </div>
                         <div>
-                            <button className="settingsBtn" style={{ border: "none", flexDirection: "row", marginTop: "30px" }}> <img src={logout} style={{ height: "35px", marginRight: "15px" }} /></button>
+                            <button className="settingsBtn" style={{ border: "none", flexDirection: "row", marginTop: "30px" }}> <img alt="" src={logout} style={{ height: "35px", marginRight: "15px" }} /></button>
                         </div>
                     </div>
                 </ReactModal>
