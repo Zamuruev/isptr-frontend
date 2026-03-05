@@ -24,8 +24,9 @@ body {
   width: 320px;
   border: 2px solid white;
   border-radius: 20px;
-  left: 20px;
+  left: 70px;
   justify-content: space-between;
+  color: white;
 }
 
 .loginBtn {
@@ -74,11 +75,26 @@ body {
   top: 30px;
   background: #313030;
   border: 2px solid white;
-  padding: 30px;
+  padding: 50px;
   border-radius: 12px;
   border-radius: 12px;
-  min-width: 500px;
-  max-width: 510px;
+  min-width: 900px;
+  max-width: 900px;
   min-height: 220px;
   color: white
+}
+
+.editPhotoProfile {
+  background: none;
+  border: none;
+  color: white;
+  margin-bottom: 30px;
+  font-size: 18px;
+  font-family: "MyFont";
+}
+
+.editPhotoProfile:hover {
+  cursor: pointer;
+  color: #0271FF;
+
 }

@@ -52,9 +52,15 @@ td {
     height: 50px;
     width: 50px;
     background: none;
-    border: 2px solid white;
+    border: none;
     border-radius: 100px;
     padding: 0px;
+}
+
+.profilebtn :hover {
+    cursor: pointer;
+    border: 2px solid white;
+    border-radius: 100px;
 }
 
 

@@ -24,6 +24,7 @@ function MainPage() {
                                 <th>Дисциплина</th>
                                 <th>Дата загрузки</th>
                                 <th>Дедлайн</th>
+                                <th>Выполнение</th>
                                 <th style={{ borderRight: "none" }}>Кнопки</th>
                             </tr>
                         </thead>
@@ -35,6 +36,7 @@ function MainPage() {
                                 <td style={{ borderBottom: "none", textOverflow: "ellipsis", overflow: "hidden", whiteSpace: "nowrap", width: "20px" }}>Технологии программного обеспечения</td>
                                 <td style={{ borderBottom: "none" }}>10.02.2026</td>
                                 <td style={{ borderBottom: "none", color: "#CF0E0E" }}>23.01.2026</td>
+                                <td style={{ borderBottom: "none", color: "#00D458" }}>Сдано</td>
                                 <div style={{
                                     borderRight: "none", borderBottom: "none",
                                     display: "flex", justifyContent: "space-around", alignItems: "center", flexDirection: "row", padding: "5px 30px"

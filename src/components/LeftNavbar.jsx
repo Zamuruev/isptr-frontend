@@ -23,11 +23,21 @@ function LeftNavBar() {
 
     const [isOpen, setIsOpen] = useState(false)
     const [visible, setVisible] = useState(false)
+    const [profileVisible, setProfileVisible] = useState(false)
+    const [settingsVisible, setSettingsVisible] = useState(false)
     const [files, setFiles] = useState([])
 
-    const toggleMenu = () => {
-        setIsOpen(prev => !prev)
-    }
+    const fio = "Замуруев Роман Романович"
+    const login = "@rrzamuruev"
+    const status = "Онлайн"
+    const faculty = "Информатика и вычислительная техника"
+    const partFaculty = "Интернет вещей (IoT)"
+    const course = "1"
+    const group = "М3О-118СВ-25"
+    const personalNumber = "1145506"
+    const gradebookNumber = "114550233223236"
+    const studentTicketNumber = "114550233223236"
+    const raitingCount = 4.8
 
     return (
         <div style={{
@@ -151,7 +161,7 @@ function LeftNavBar() {
 
             <button
                 className="btntable"
-                onClick={toggleMenu}
+                onClick={() => setSettingsVisible(!profileVisible)}
                 data-tooltip-id="settings-tip"
                 data-tooltip-content="Настройки">
                 <img src={settings} alt="settings" style={{ height: "30px" }} />
@@ -166,8 +176,12 @@ function LeftNavBar() {
                 }}
             />
 
-            {isOpen && (
-                <div className="settingsBlock">
+            {(
+                <ReactModal
+                    isOpen={settingsVisible}
+                    onRequestClose={() => setSettingsVisible(false)}
+                    className="settingsBlock"
+                    overlayClassName="modalOverlay">
                     <div>
                         <div style={{ display: "flex", justifyContent: "space-between", borderBottom: "2px solid white", paddingBottom: "10px", alignItems: "center" }}>
                             <div style={{ lineHeight: "25px" }}>
@@ -180,8 +194,38 @@ function LeftNavBar() {
                                 <div style={{ color: "#0271FF" }}> @rrzamuruev </div>
                             </div>
                             <div>
-                                <button className="profilebtn"> <img src={profile} style={{ height: "60px" }} /></button>
+                                <button className="profilebtn"> <img src={profile} style={{ height: "60px" }} onClick={() => setProfileVisible(!profileVisible)} /></button>
                             </div>
+                            <ReactModal
+                                isOpen={profileVisible}
+                                onRequestClose={() => setProfileVisible(false)}
+                                className="modalWindow"
+                                overlayClassName="modalOverlay"
+                            >
+                                <div style={{ display: "flex", gap: "30px", flexDirection: "row" }}>
+                                    <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                                        <img src={profile} style={{ width: "200px", height: "200px", border: "3px solid white", borderRadius: "200px", padding: "0px", marginBottom: "18px" }} />
+                                        <button className="editPhotoProfile" onClick={() => {
+                                            window.open();
+                                        }}>Редактировать фото</button>
+                                        <div><strong>Рейтинг: </strong><a style={raitingCount >= 4 && raitingCount <= 5 ? { color: "#00D458" } : raitingCount < 4 && raitingCount >= 3 ? { color: "#FFA600" } : { color: "#e71b1bff" }}>{raitingCount}</a></div>
+                                    </div>
+                                    <div>
+                                        <div style={{ display: "flex", gap: "10px", justifyContent: "center", height: "max-content", alignItems: "center", marginBottom: "10px" }}>
+                                            <div style={{ fontWeight: "bold", fontSize: "25px" }}>{fio}</div>
+                                            <div style={{ fontWeight: "bold", fontSize: "18px", color: "#0271FF" }}>{login}</div>
+                                            <div style={{ fontWeight: "bold", fontSize: "18px", color: "#00D458" }}>{status}</div>
+                                        </div>
+                                        <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+                                            <div>{faculty}</div>
+                                            <div>{partFaculty} {course} курс {group}</div>
+                                            <div><strong>Табельный номер:</strong> {personalNumber}</div>
+                                            <div><strong>Номер зачетной книжки:</strong> {gradebookNumber}</div>
+                                            <div><strong>Номер студенческого билета:</strong> {studentTicketNumber}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ReactModal>
                         </div>
                         <div>
 
@@ -201,7 +245,7 @@ function LeftNavBar() {
                             <button className="settingsBtn" style={{ border: "none", flexDirection: "row", marginTop: "30px" }}> <img src={logout} style={{ height: "35px", marginRight: "15px" }} /></button>
                         </div>
                     </div>
-                </div>
+                </ReactModal>
             )}
 
         </div>
