@@ -20,7 +20,7 @@ function Header() {
                     <div style={{ fontWeight: "bold" }}>ИСПТР</div>
                 </div>
                 <button className="btntable" data-tooltip-id="notification-tip"
-                    data-tooltip-content="Уведомления"><img src={notification} style={{ height: "30px" }} /></button>
+                    data-tooltip-content="Уведомления"><img alt="notification" src={notification} style={{ height: "30px" }} /></button>
                 <Tooltip id="notification-tip"
                     place="right"
                     style={{
