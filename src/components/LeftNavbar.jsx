@@ -20,7 +20,6 @@ ReactModal.setAppElement("#root")
 
 function LeftNavBar() {
 
-    const [isOpen, setIsOpen] = useState(false)
     const [visible, setVisible] = useState(false)
     const [profileVisible, setProfileVisible] = useState(false)
     const [settingsVisible, setSettingsVisible] = useState(false)
@@ -207,7 +206,7 @@ function LeftNavBar() {
                                         <button className="editPhotoProfile" onClick={() => {
                                             // открытие windows окна для выбора картинки
                                         }}>Редактировать фото</button>
-                                        <div><strong>Рейтинг: </strong><a style={raitingCount >= 4 && raitingCount <= 5 ? { color: "#00D458" } : raitingCount < 4 && raitingCount >= 3 ? { color: "#FFA600" } : { color: "#e71b1bff" }}>{raitingCount}</a></div>
+                                        <div><strong>Рейтинг: </strong><p style={raitingCount >= 4 && raitingCount <= 5 ? { color: "#00D458" } : raitingCount < 4 && raitingCount >= 3 ? { color: "#FFA600" } : { color: "#e71b1bff" }}>{raitingCount}</p></div>
                                     </div>
                                     <div>
                                         <div style={{ display: "flex", gap: "10px", justifyContent: "center", height: "max-content", alignItems: "center", marginBottom: "10px" }}>
