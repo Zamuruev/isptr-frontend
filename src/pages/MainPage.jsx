@@ -3,6 +3,7 @@ import filter from "../resources/img/filter.svg"
 import checkbtn from "../resources/img/check.svg"
 import editbtn from "../resources/img/editbtn.svg"
 import closebtn from "../resources/img/closebtn.svg"
+
 function MainPage() {
     return (
         <>

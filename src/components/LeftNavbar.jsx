@@ -15,7 +15,6 @@ import sun from "../resources/img/sun.svg"
 import support from "../resources/img/support.svg"
 import logout from "../resources/img/logout.svg"
 import closeForm from "../resources/img/closeForm.svg"
-import closebtn from "../resources/img/closebtn.svg"
 
 ReactModal.setAppElement("#root")
 
@@ -194,7 +193,7 @@ function LeftNavBar() {
                                 <div style={{ color: "#0271FF" }}> @rrzamuruev </div>
                             </div>
                             <div>
-                                <button className="profilebtn"> <img src={profile} style={{ height: "60px" }} onClick={() => setProfileVisible(!profileVisible)} /></button>
+                                <button className="profilebtn"> <img src={profile} alt="profileBtn" style={{ height: "60px" }} onClick={() => setProfileVisible(!profileVisible)} /></button>
                             </div>
                             <ReactModal
                                 isOpen={profileVisible}
@@ -204,9 +203,9 @@ function LeftNavBar() {
                             >
                                 <div style={{ display: "flex", gap: "30px", flexDirection: "row" }}>
                                     <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                                        <img src={profile} style={{ width: "200px", height: "200px", border: "3px solid white", borderRadius: "200px", padding: "0px", marginBottom: "18px" }} />
+                                        <img alt="profilePhoto" src={profile} style={{ width: "200px", height: "200px", border: "3px solid white", borderRadius: "200px", padding: "0px", marginBottom: "18px" }} />
                                         <button className="editPhotoProfile" onClick={() => {
-                                            window.open();
+                                            // открытие windows окна для выбора картинки
                                         }}>Редактировать фото</button>
                                         <div><strong>Рейтинг: </strong><a style={raitingCount >= 4 && raitingCount <= 5 ? { color: "#00D458" } : raitingCount < 4 && raitingCount >= 3 ? { color: "#FFA600" } : { color: "#e71b1bff" }}>{raitingCount}</a></div>
                                     </div>
@@ -230,16 +229,16 @@ function LeftNavBar() {
                         <div>
 
                             <div>
-                                <button className="settingsBtn" style={{ border: "none", flexDirection: "row", marginTop: "30px" }}> <img src={raiting} style={{ height: "25px", marginRight: "15px" }} /> <div style={{ color: "white" }}>Рейтинг</div></button>
+                                <button className="settingsBtn" style={{ border: "none", flexDirection: "row", marginTop: "30px" }}> <img alt="settings" src={raiting} style={{ height: "25px", marginRight: "15px" }} /> <div style={{ color: "white" }}>Рейтинг</div></button>
                             </div>
                             <div>
-                                <button className="settingsBtn" style={{ border: "none", flexDirection: "row", marginTop: "30px" }}> <img src={sun} style={{ height: "25px", marginRight: "15px" }} /><div style={{ color: "white" }}>Тема: <a style={{ color: "#0271FF" }}>Темная</a></div></button>
+                                <button className="settingsBtn" style={{ border: "none", flexDirection: "row", marginTop: "30px" }}> <img alt="settingsBtn" src={sun} style={{ height: "25px", marginRight: "15px" }} /><div style={{ color: "white" }}>Тема: <a style={{ color: "#0271FF" }}>Темная</a></div></button>
                             </div>
                         </div>
                     </div>
                     <div style={{ display: "flex", justifyContent: "space-between" }}>
                         <div>
-                            <button className="settingsBtn" style={{ border: "none", flexDirection: "row", marginTop: "30px" }}> <img src={support} style={{ height: "25px", marginRight: "15px" }} /><div style={{ color: "#00D458", fontWeight: "bold", fontSize: "17px" }}>Поддержка</div></button>
+                            <button className="settingsBtn" style={{ border: "none", flexDirection: "row", marginTop: "30px" }}> <img alt="settingsBtn" src={support} style={{ height: "25px", marginRight: "15px" }} /><div style={{ color: "#00D458", fontWeight: "bold", fontSize: "17px" }}>Поддержка</div></button>
                         </div>
                         <div>
                             <button className="settingsBtn" style={{ border: "none", flexDirection: "row", marginTop: "30px" }}> <img src={logout} style={{ height: "35px", marginRight: "15px" }} /></button>
